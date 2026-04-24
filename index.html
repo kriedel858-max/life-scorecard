@@ -24,66 +24,54 @@
       --red-bg: #FCEBEB; --red-text: #A32D2D;
       --amber-bg: #FAEEDA; --amber-text: #854F0B;
       --blue-bg: #E6F1FB; --blue-text: #185FA5;
-      --purple-bg: #EEEDFE; --purple-text: #534AB7;
       --pink-bg: #FBEAF0; --pink-text: #993556;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-primary: #1c1c1a;
-        --bg-secondary: #262624;
-        --bg-tertiary: #2e2e2b;
-        --text-primary: #f0ede8;
-        --text-secondary: #9a9a94;
-        --border: rgba(255,255,255,0.1);
-        --border-md: rgba(255,255,255,0.2);
+        --bg-primary: #1c1c1a; --bg-secondary: #262624; --bg-tertiary: #2e2e2b;
+        --text-primary: #f0ede8; --text-secondary: #9a9a94;
+        --border: rgba(255,255,255,0.1); --border-md: rgba(255,255,255,0.2);
         --green-bg: #1a2e10; --green-text: #8ecf5a;
         --red-bg: #2e1010; --red-text: #f08080;
         --amber-bg: #2e1e08; --amber-text: #f0b860;
         --blue-bg: #0c1e35; --blue-text: #6aabf0;
-        --purple-bg: #1a1840; --purple-text: #a099f0;
         --pink-bg: #2e1020; --pink-text: #f090b0;
       }
     }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-      min-height: 100vh;
-      padding-bottom: env(safe-area-inset-bottom);
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-tertiary); color: var(--text-primary); min-height: 100vh; padding-bottom: env(safe-area-inset-bottom); }
     .app { max-width: 600px; margin: 0 auto; padding: 1.25rem 1rem 5rem; }
     .header { margin-bottom: 1.25rem; }
     .header h1 { font-size: 22px; font-weight: 600; color: var(--text-primary); }
     .header p { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
-    .score-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+    .score-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
     .score-card { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 14px; }
-    .score-card .label { font-size: 11px; color: var(--text-secondary); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .score-card .label { font-size: 11px; color: var(--text-secondary); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .04em; }
     .score-card .value { font-size: 22px; font-weight: 600; color: var(--text-primary); }
     .score-card .sub { font-size: 11px; color: var(--text-secondary); margin-top: 3px; }
     .rank-bar-wrap { background: var(--bg-primary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
     .rank-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .rank-label { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .rank-label { font-size: 14px; font-weight: 600; }
     .rank-next { font-size: 12px; color: var(--text-secondary); }
     .progress-track { height: 8px; background: var(--bg-secondary); border-radius: 99px; overflow: hidden; }
-    .progress-fill { height: 100%; border-radius: 99px; background: var(--blue); transition: width 0.4s ease; }
+    .progress-fill { height: 100%; border-radius: 99px; background: var(--blue); transition: width .4s ease; }
     .tabs { display: flex; gap: 4px; margin-bottom: 1.25rem; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 4px; }
-    .tab { flex: 1; padding: 8px 4px; text-align: center; font-size: 13px; color: var(--text-secondary); border-radius: 6px; cursor: pointer; border: none; background: transparent; -webkit-tap-highlight-color: transparent; }
+    .tab { flex: 1; padding: 8px 2px; text-align: center; font-size: 12px; color: var(--text-secondary); border-radius: 6px; cursor: pointer; border: none; background: transparent; -webkit-tap-highlight-color: transparent; }
     .tab.active { background: var(--bg-primary); color: var(--text-primary); font-weight: 600; border: 0.5px solid var(--border); }
-    .section-title { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
-    .habits-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .section-title { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
+    .habits-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
     .habit-card { background: var(--bg-primary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 14px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .habit-card:active { opacity: 0.75; }
+    .habit-card:active { opacity: .75; }
     .habit-card.wife-card { border-color: var(--pink-text); border-width: 1px; }
     .habit-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 10px; }
-    .habit-name { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+    .habit-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
     .habit-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
     .habit-log-count { font-size: 11px; color: var(--text-secondary); margin-top: 8px; padding-top: 8px; border-top: 0.5px solid var(--border); }
     .wife-badge { display: inline-block; font-size: 10px; font-weight: 600; background: var(--pink-bg); color: var(--pink-text); padding: 2px 7px; border-radius: 99px; margin-bottom: 6px; }
-    .rewards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .rewards-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
     .reward-card { background: var(--bg-primary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 14px; }
-    .reward-card.locked { opacity: 0.5; }
+    .reward-card.locked { opacity: .5; }
     .reward-icon { font-size: 30px; margin-bottom: 8px; }
-    .reward-name { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+    .reward-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
     .reward-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.4; }
     .reward-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
     .pill { display: inline-flex; font-size: 11px; padding: 3px 9px; border-radius: 99px; width: fit-content; font-weight: 500; }
@@ -91,53 +79,79 @@
     .pill-locked { background: var(--bg-secondary); color: var(--text-secondary); }
     .pill-cost { background: var(--amber-bg); color: var(--amber-text); }
     .redeem-btn { width: 100%; padding: 10px; border-radius: var(--radius-md); border: 0.5px solid var(--border-md); background: transparent; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text-primary); -webkit-tap-highlight-color: transparent; }
-    .redeem-btn:active:not(:disabled) { opacity: 0.7; }
-    .redeem-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .redeem-btn:active:not(:disabled) { opacity: .7; }
+    .redeem-btn:disabled { opacity: .35; cursor: not-allowed; }
     .redeem-btn.can-redeem { border-color: var(--blue); color: var(--blue); }
     .redeemed-count { font-size: 11px; color: var(--text-secondary); margin-top: 6px; }
     .log-panel { background: var(--bg-primary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; }
-    .log-panel-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; }
+    .log-panel-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
     .log-entry { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 0.5px solid var(--border); }
     .log-entry:last-child { border-bottom: none; }
-    .log-name { font-size: 13px; color: var(--text-primary); }
+    .log-name { font-size: 13px; }
     .log-detail { font-size: 12px; color: var(--text-secondary); margin-top: 1px; }
     .log-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
     .log-pts { font-size: 13px; font-weight: 600; }
-    .pts-pos { color: var(--green-text); }
-    .pts-neg { color: var(--red-text); }
-    .pts-reward { color: var(--amber-text); }
-    .pts-wife { color: var(--pink-text); }
+    .pts-pos { color: var(--green-text); } .pts-neg { color: var(--red-text); } .pts-reward { color: var(--amber-text); } .pts-wife { color: var(--pink-text); }
     .log-time { font-size: 11px; color: var(--text-secondary); }
     .empty-state { font-size: 13px; color: var(--text-secondary); padding: 8px 0; }
 
+    /* Settings */
+    .settings-section { background: var(--bg-primary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .settings-section-title { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    .habit-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 0.5px solid var(--border); gap: 8px; }
+    .habit-row:last-child { border-bottom: none; }
+    .habit-row-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+    .habit-row-icon { font-size: 18px; width: 28px; text-align: center; flex-shrink: 0; }
+    .habit-row-name { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .habit-row-btns { display: flex; gap: 6px; flex-shrink: 0; }
+    .icon-btn { padding: 6px 10px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: transparent; font-size: 12px; cursor: pointer; color: var(--text-secondary); -webkit-tap-highlight-color: transparent; }
+    .icon-btn:active { opacity: .7; }
+    .icon-btn.danger { color: var(--red-text); border-color: var(--red-text); }
+    .add-btn { width: 100%; padding: 11px; border-radius: var(--radius-md); border: 0.5px solid var(--blue); background: transparent; font-size: 14px; font-weight: 600; color: var(--blue); cursor: pointer; margin-top: 12px; -webkit-tap-highlight-color: transparent; }
+    .add-btn:active { opacity: .7; }
+    .settings-info { font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; }
+    .pin-change-btn { width: 100%; padding: 11px; border-radius: var(--radius-md); border: 0.5px solid var(--border-md); background: transparent; font-size: 14px; font-weight: 500; color: var(--text-primary); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
     /* Modal */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: flex-end; justify-content: center; z-index: 100; padding-bottom: env(safe-area-inset-bottom); }
-    .modal { background: var(--bg-primary); border-radius: 20px 20px 0 0; width: 100%; max-width: 600px; padding: 1.25rem 1.25rem 1.5rem; max-height: 85vh; overflow-y: auto; }
+    .modal { background: var(--bg-primary); border-radius: 20px 20px 0 0; width: 100%; max-width: 600px; padding: 1.25rem 1.25rem 1.5rem; max-height: 90vh; overflow-y: auto; }
     .modal-handle { width: 36px; height: 4px; background: var(--border-md); border-radius: 99px; margin: 0 auto 1rem; }
-    .modal-title { font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .modal-title { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
     .modal-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
     .modal-actions { display: flex; flex-direction: column; gap: 8px; }
     .modal-btn { padding: 13px 16px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg-secondary); font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-primary); -webkit-tap-highlight-color: transparent; text-align: left; width: 100%; }
-    .modal-btn:active { opacity: 0.7; }
+    .modal-btn:active { opacity: .7; }
     .modal-btn-pts { font-size: 13px; font-weight: 600; white-space: nowrap; margin-left: 10px; }
     .modal-cancel { margin-top: 8px; text-align: center; font-size: 15px; color: var(--blue); cursor: pointer; padding: 10px; -webkit-tap-highlight-color: transparent; }
 
-    /* PIN pad */
+    /* Edit habit form */
+    .form-group { margin-bottom: 14px; }
+    .form-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; display: block; }
+    .form-input { width: 100%; padding: 10px 12px; border-radius: var(--radius-md); border: 0.5px solid var(--border-md); background: var(--bg-secondary); font-size: 14px; color: var(--text-primary); font-family: inherit; }
+    .form-input:focus { outline: none; border-color: var(--blue); }
+    .action-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .action-label-input { flex: 1; padding: 9px 12px; border-radius: var(--radius-md); border: 0.5px solid var(--border-md); background: var(--bg-secondary); font-size: 13px; color: var(--text-primary); font-family: inherit; }
+    .action-pts-input { width: 70px; padding: 9px 10px; border-radius: var(--radius-md); border: 0.5px solid var(--border-md); background: var(--bg-secondary); font-size: 13px; color: var(--text-primary); font-family: inherit; text-align: center; }
+    .action-label-input:focus, .action-pts-input:focus { outline: none; border-color: var(--blue); }
+    .remove-action-btn { padding: 8px; border-radius: var(--radius-md); border: none; background: transparent; font-size: 16px; cursor: pointer; color: var(--red-text); -webkit-tap-highlight-color: transparent; }
+    .add-action-btn { font-size: 13px; color: var(--blue); background: none; border: none; cursor: pointer; padding: 4px 0; -webkit-tap-highlight-color: transparent; }
+    .save-btn { width: 100%; padding: 13px; border-radius: var(--radius-md); border: none; background: var(--blue); font-size: 15px; font-weight: 600; color: white; cursor: pointer; margin-top: 4px; -webkit-tap-highlight-color: transparent; }
+    .save-btn:active { opacity: .8; }
+
+    /* PIN */
     .pin-display { display: flex; justify-content: center; gap: 12px; margin: 16px 0; }
-    .pin-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border-md); background: transparent; transition: background 0.15s; }
+    .pin-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border-md); background: transparent; transition: background .15s; }
     .pin-dot.filled { background: var(--pink-text); border-color: var(--pink-text); }
-    .pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+    .pin-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 12px; }
     .pin-btn { padding: 16px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg-secondary); font-size: 20px; font-weight: 500; cursor: pointer; color: var(--text-primary); -webkit-tap-highlight-color: transparent; }
-    .pin-btn:active { opacity: 0.6; }
+    .pin-btn:active { opacity: .6; }
     .pin-btn.delete { font-size: 16px; color: var(--text-secondary); }
     .pin-error { text-align: center; font-size: 13px; color: var(--red-text); margin-top: -4px; margin-bottom: 8px; min-height: 18px; }
     .pin-award-btns { display: flex; flex-direction: column; gap: 8px; }
     .pin-award-btn { padding: 13px 16px; border-radius: var(--radius-md); border: 0.5px solid var(--border); background: var(--bg-secondary); font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-primary); width: 100%; -webkit-tap-highlight-color: transparent; }
-    .pin-award-btn:active { opacity: 0.7; }
-    .pin-setup-link { text-align: center; font-size: 12px; color: var(--text-secondary); margin-top: 10px; cursor: pointer; }
-    .pin-setup-link span { color: var(--blue); }
+    .pin-award-btn:active { opacity: .7; }
 
-    .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); padding: 10px 20px; border-radius: 99px; font-size: 14px; font-weight: 600; z-index: 200; white-space: nowrap; transition: opacity 0.3s; pointer-events: none; }
+    .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); padding: 10px 20px; border-radius: 99px; font-size: 14px; font-weight: 600; z-index: 200; white-space: nowrap; transition: opacity .3s; pointer-events: none; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
   </style>
 </head>
 <body>
@@ -147,34 +161,21 @@
     <p id="date-str"></p>
   </div>
   <div class="score-cards">
-    <div class="score-card">
-      <div class="label">Points</div>
-      <div class="value" id="total-pts">0</div>
-      <div class="sub">to spend</div>
-    </div>
-    <div class="score-card">
-      <div class="label">Today</div>
-      <div class="value" id="today-pts">0</div>
-      <div class="sub">pts logged</div>
-    </div>
-    <div class="score-card">
-      <div class="label">Rewards</div>
-      <div class="value" id="rewards-claimed">0</div>
-      <div class="sub">claimed</div>
-    </div>
+    <div class="score-card"><div class="label">Points</div><div class="value" id="total-pts">0</div><div class="sub">to spend</div></div>
+    <div class="score-card"><div class="label">Today</div><div class="value" id="today-pts">0</div><div class="sub">pts logged</div></div>
+    <div class="score-card"><div class="label">Rewards</div><div class="value" id="rewards-claimed">0</div><div class="sub">claimed</div></div>
   </div>
   <div class="rank-bar-wrap">
-    <div class="rank-row">
-      <span class="rank-label" id="rank-label">Associate</span>
-      <span class="rank-next" id="rank-next"></span>
-    </div>
+    <div class="rank-row"><span class="rank-label" id="rank-label">Associate</span><span class="rank-next" id="rank-next"></span></div>
     <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="switchTab('log')">Log</button>
     <button class="tab" onclick="switchTab('rewards')">Rewards</button>
     <button class="tab" onclick="switchTab('history')">Today</button>
+    <button class="tab" onclick="switchTab('settings')">Settings</button>
   </div>
+
   <div id="tab-log">
     <div class="section-title">Tap a habit to log it</div>
     <div class="habits-grid" id="habits-grid"></div>
@@ -189,10 +190,23 @@
       <div id="log-list"><p class="empty-state">No entries yet today.</p></div>
     </div>
   </div>
+  <div id="tab-settings" style="display:none;">
+    <div class="settings-section">
+      <div class="settings-section-title">Habits</div>
+      <div class="settings-info">Edit names, descriptions, point values, or add/remove habits. The Wife's Award and Spiritual categories cannot be deleted.</div>
+      <div id="settings-habit-list"></div>
+      <button class="add-btn" onclick="openAddHabit()">+ Add new habit</button>
+    </div>
+    <div class="settings-section">
+      <div class="settings-section-title">Wife's Award PIN</div>
+      <div class="settings-info" id="pin-status-text"></div>
+      <button class="pin-change-btn" id="pin-change-btn" onclick="openPinSetupFromSettings()"></button>
+    </div>
+  </div>
 </div>
 
-<!-- Standard habit modal -->
-<div class="modal-overlay" id="modal-overlay" style="display:none;" onclick="handleOverlayClick(event)">
+<!-- Habit log modal -->
+<div class="modal-overlay" id="modal-overlay" style="display:none;" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-handle"></div>
     <div class="modal-title" id="modal-title"></div>
@@ -202,215 +216,184 @@
   </div>
 </div>
 
-<!-- Wife Award modal -->
-<div class="modal-overlay" id="wife-modal-overlay" style="display:none;" onclick="handleWifeOverlayClick(event)">
+<!-- Edit habit modal -->
+<div class="modal-overlay" id="edit-modal-overlay" style="display:none;" onclick="if(event.target===this)closeEditModal()">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="edit-modal-title">Edit Habit</div>
+    <div style="margin-top:12px;">
+      <div class="form-group">
+        <label class="form-label">Icon (emoji)</label>
+        <input class="form-input" id="edit-icon" maxlength="4" style="width:80px;" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input class="form-input" id="edit-name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <input class="form-input" id="edit-desc" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Actions & Point Values</label>
+        <div id="edit-actions-list"></div>
+        <button class="add-action-btn" onclick="addActionRow()">+ Add action</button>
+      </div>
+      <button class="save-btn" onclick="saveHabit()">Save changes</button>
+    </div>
+    <div class="modal-cancel" onclick="closeEditModal()">Cancel</div>
+  </div>
+</div>
+
+<!-- Wife award modal -->
+<div class="modal-overlay" id="wife-modal-overlay" style="display:none;" onclick="if(event.target===this)closeWifeModal()">
   <div class="modal" id="wife-modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="wife-modal-title">💕 Wife's Award</div>
+    <div class="modal-title">💕 Wife's Award</div>
     <div id="wife-pin-screen">
       <div class="modal-sub" id="wife-modal-sub">Hand the phone to your wife. She enters the PIN to award points.</div>
-      <div class="pin-display" id="pin-display">
-        <div class="pin-dot" id="dot0"></div>
-        <div class="pin-dot" id="dot1"></div>
-        <div class="pin-dot" id="dot2"></div>
-        <div class="pin-dot" id="dot3"></div>
-      </div>
+      <div class="pin-display"><div class="pin-dot" id="dot0"></div><div class="pin-dot" id="dot1"></div><div class="pin-dot" id="dot2"></div><div class="pin-dot" id="dot3"></div></div>
       <div class="pin-error" id="pin-error"></div>
       <div class="pin-grid">
-        <button class="pin-btn" onclick="pinPress('1')">1</button>
-        <button class="pin-btn" onclick="pinPress('2')">2</button>
-        <button class="pin-btn" onclick="pinPress('3')">3</button>
-        <button class="pin-btn" onclick="pinPress('4')">4</button>
-        <button class="pin-btn" onclick="pinPress('5')">5</button>
-        <button class="pin-btn" onclick="pinPress('6')">6</button>
-        <button class="pin-btn" onclick="pinPress('7')">7</button>
-        <button class="pin-btn" onclick="pinPress('8')">8</button>
-        <button class="pin-btn" onclick="pinPress('9')">9</button>
-        <button class="pin-btn" onclick="pinPress('0')" style="grid-column:2">0</button>
-        <button class="pin-btn delete" onclick="pinDelete()">⌫</button>
+        <button class="pin-btn" onclick="pinPress('1')">1</button><button class="pin-btn" onclick="pinPress('2')">2</button><button class="pin-btn" onclick="pinPress('3')">3</button>
+        <button class="pin-btn" onclick="pinPress('4')">4</button><button class="pin-btn" onclick="pinPress('5')">5</button><button class="pin-btn" onclick="pinPress('6')">6</button>
+        <button class="pin-btn" onclick="pinPress('7')">7</button><button class="pin-btn" onclick="pinPress('8')">8</button><button class="pin-btn" onclick="pinPress('9')">9</button>
+        <button class="pin-btn" onclick="pinPress('0')" style="grid-column:2">0</button><button class="pin-btn delete" onclick="pinDelete()">⌫</button>
       </div>
-      <div class="pin-setup-link" id="pin-setup-link" onclick="showPinSetup()">No PIN set yet — <span>tap to create one</span></div>
+      <div class="modal-cancel" onclick="closeWifeModal()">Cancel</div>
     </div>
     <div id="wife-award-screen" style="display:none;">
       <div class="modal-sub">What would you like to award?</div>
       <div class="pin-award-btns">
-        <button class="pin-award-btn" onclick="wifeAward('Exceptional kindness or thoughtfulness', 35)">
-          <span>Exceptional kindness or thoughtfulness</span>
-          <span class="modal-btn-pts pts-wife">+35</span>
-        </button>
-        <button class="pin-award-btn" onclick="wifeAward('Sweet gesture or kind moment', 20)">
-          <span>Sweet gesture or kind moment</span>
-          <span class="modal-btn-pts pts-wife">+20</span>
-        </button>
-        <button class="pin-award-btn" onclick="wifeAward('Good husband moment', 10)">
-          <span>Good husband moment</span>
-          <span class="modal-btn-pts pts-wife">+10</span>
-        </button>
+        <button class="pin-award-btn" onclick="wifeAward('Exceptional kindness or thoughtfulness',35)"><span>Exceptional kindness or thoughtfulness</span><span class="modal-btn-pts pts-wife">+35</span></button>
+        <button class="pin-award-btn" onclick="wifeAward('Sweet gesture or kind moment',20)"><span>Sweet gesture or kind moment</span><span class="modal-btn-pts pts-wife">+20</span></button>
+        <button class="pin-award-btn" onclick="wifeAward('Good husband moment',10)"><span>Good husband moment</span><span class="modal-btn-pts pts-wife">+10</span></button>
       </div>
       <div class="modal-cancel" onclick="closeWifeModal()">Cancel</div>
-    </div>
-    <div id="wife-setup-screen" style="display:none;">
-      <div class="modal-sub" id="setup-sub">Choose a new 4-digit PIN for your wife.</div>
-      <div class="pin-display" id="setup-pin-display">
-        <div class="pin-dot" id="sdot0"></div>
-        <div class="pin-dot" id="sdot1"></div>
-        <div class="pin-dot" id="sdot2"></div>
-        <div class="pin-dot" id="sdot3"></div>
-      </div>
-      <div class="pin-error" id="setup-pin-error"></div>
-      <div class="pin-grid">
-        <button class="pin-btn" onclick="setupPinPress('1')">1</button>
-        <button class="pin-btn" onclick="setupPinPress('2')">2</button>
-        <button class="pin-btn" onclick="setupPinPress('3')">3</button>
-        <button class="pin-btn" onclick="setupPinPress('4')">4</button>
-        <button class="pin-btn" onclick="setupPinPress('5')">5</button>
-        <button class="pin-btn" onclick="setupPinPress('6')">6</button>
-        <button class="pin-btn" onclick="setupPinPress('7')">7</button>
-        <button class="pin-btn" onclick="setupPinPress('8')">8</button>
-        <button class="pin-btn" onclick="setupPinPress('9')">9</button>
-        <button class="pin-btn" onclick="setupPinPress('0')" style="grid-column:2">0</button>
-        <button class="pin-btn delete" onclick="setupPinDelete()">⌫</button>
-      </div>
-      <div class="modal-cancel" onclick="cancelPinSetup()">Cancel</div>
     </div>
   </div>
 </div>
 
+<!-- PIN setup modal -->
+<div class="modal-overlay" id="pin-setup-overlay" style="display:none;" onclick="if(event.target===this)closePinSetup()">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="pin-setup-title">Set Wife's PIN</div>
+    <div class="modal-sub" id="pin-setup-sub">Choose a 4-digit PIN your wife will use to award points.</div>
+    <div class="pin-display"><div class="pin-dot" id="sdot0"></div><div class="pin-dot" id="sdot1"></div><div class="pin-dot" id="sdot2"></div><div class="pin-dot" id="sdot3"></div></div>
+    <div class="pin-error" id="setup-pin-error"></div>
+    <div class="pin-grid">
+      <button class="pin-btn" onclick="setupPinPress('1')">1</button><button class="pin-btn" onclick="setupPinPress('2')">2</button><button class="pin-btn" onclick="setupPinPress('3')">3</button>
+      <button class="pin-btn" onclick="setupPinPress('4')">4</button><button class="pin-btn" onclick="setupPinPress('5')">5</button><button class="pin-btn" onclick="setupPinPress('6')">6</button>
+      <button class="pin-btn" onclick="setupPinPress('7')">7</button><button class="pin-btn" onclick="setupPinPress('8')">8</button><button class="pin-btn" onclick="setupPinPress('9')">9</button>
+      <button class="pin-btn" onclick="setupPinPress('0')" style="grid-column:2">0</button><button class="pin-btn delete" onclick="setupPinDelete()">⌫</button>
+    </div>
+    <div class="modal-cancel" onclick="closePinSetup()">Cancel</div>
+  </div>
+</div>
+
 <script>
-const habits = [
-  { id:'exercise', name:'Exercise', icon:'🏃', color:'#EAF3DE', desc:'Workout, walk, or movement', actions:[
-    {label:'Full workout — push-ups & sit-ups', pts:20},
-    {label:'Short walk / light activity', pts:10},
-    {label:'Skipped — sedentary day', pts:-10}
-  ]},
-  { id:'diet', name:'Diet', icon:'🥗', color:'#E1F5EE', desc:'Eating & nutrition choices', actions:[
-    {label:'Clean, intentional meals', pts:15},
-    {label:'One small slip', pts:-5},
-    {label:'Poor eating choices', pts:-15}
-  ]},
-  { id:'sleep', name:'Sleep', icon:'🌙', color:'#E6F1FB', desc:'Rest & recovery', actions:[
-    {label:'Solid 7–8 hours', pts:15},
-    {label:'Decent but short', pts:5},
-    {label:'Poor sleep / stayed up late', pts:-10}
-  ]},
-  { id:'work', name:'Work & Prep', icon:'💼', color:'#FAEEDA', desc:'Loan officer readiness', actions:[
-    {label:'Overall solid, productive day', pts:20},
-    {label:'Handled key tasks proactively', pts:15},
-    {label:'Managed high demands effectively', pts:5},
-    {label:'Reactive / procrastinated', pts:-10}
-  ]},
-  { id:'attitude', name:'Attitude', icon:'🧠', color:'#E1F5EE', desc:'Complaints & outlook', actions:[
-    {label:'Stayed positive — zero complaints', pts:15},
-    {label:'Minor slip, caught myself', pts:5},
-    {label:'Complained freely, brought others down', pts:-15}
-  ]},
-  { id:'driving', name:'Driving', icon:'🚗', color:'#E6F1FB', desc:'Patience & safety on the road', actions:[
-    {label:'Calm, patient, courteous driver', pts:15},
-    {label:'A few moments of impatience', pts:5},
-    {label:'Aggressive — tailgating, cutting off', pts:-20}
-  ]},
-  { id:'finance', name:'Finance', icon:'📊', color:'#EEEDFE', desc:'Spending & financial discipline', actions:[
-    {label:'Did numbers — logged spending in Quicken', pts:10},
-    {label:'Stuck to budget', pts:15},
-    {label:'Minor unplanned spend', pts:-5},
-    {label:'Significant overspend', pts:-20}
-  ]},
-  { id:'character', name:'Character', icon:'✉', color:'#EAF3DE', desc:'Generosity & acts of service', actions:[
-    {label:'Sent a hand-written thank-you card', pts:25},
-    {label:'Act of service — gave wife a 15-min massage', pts:10}
-  ]},
-  { id:'spiritual', name:'Spiritual', icon:'✝', color:'#FBEAF0', desc:'Faith & personal integrity', actions:[
-    {label:'Prayer / scripture / devotion', pts:15},
-    {label:'Clean day — stayed true', pts:20},
-    {label:'Struggled today', pts:-25}
-  ]},
-  { id:'wife', name:"Wife's Award", icon:'💕', color:'#FBEAF0', desc:'Awarded by your wife with her PIN', isWife:true }
+// ── Default habits ──────────────────────────────────────────────
+const DEFAULT_HABITS = [
+  {id:'exercise',name:'Exercise',icon:'🏃',color:'#EAF3DE',desc:'Workout, walk, or movement',actions:[{label:'Full workout — push-ups & sit-ups',pts:20},{label:'Short walk / light activity',pts:10},{label:'Skipped — sedentary day',pts:-10}]},
+  {id:'diet',name:'Diet',icon:'🥗',color:'#E1F5EE',desc:'Eating & nutrition choices',actions:[{label:'Clean, intentional meals',pts:15},{label:'One small slip',pts:-5},{label:'Poor eating choices',pts:-15}]},
+  {id:'sleep',name:'Sleep',icon:'🌙',color:'#E6F1FB',desc:'Rest & recovery',actions:[{label:'Solid 7–8 hours',pts:15},{label:'Decent but short',pts:5},{label:'Poor sleep / stayed up late',pts:-10}]},
+  {id:'work',name:'Work & Prep',icon:'💼',color:'#FAEEDA',desc:'Loan officer readiness',actions:[{label:'Overall solid, productive day',pts:20},{label:'Handled key tasks proactively',pts:15},{label:'Managed high demands effectively',pts:5},{label:'Reactive / procrastinated',pts:-10}]},
+  {id:'attitude',name:'Attitude',icon:'🧠',color:'#E1F5EE',desc:'Complaints & outlook',actions:[{label:'Stayed positive — zero complaints',pts:15},{label:'Minor slip, caught myself',pts:5},{label:'Complained freely, brought others down',pts:-15}]},
+  {id:'driving',name:'Driving',icon:'🚗',color:'#E6F1FB',desc:'Patience & safety on the road',actions:[{label:'Calm, patient, courteous driver',pts:15},{label:'A few moments of impatience',pts:5},{label:'Aggressive — tailgating, cutting off',pts:-20}]},
+  {id:'finance',name:'Finance',icon:'📊',color:'#EEEDFE',desc:'Spending & financial discipline',actions:[{label:'Did numbers — logged spending in Quicken',pts:10},{label:'Stuck to budget',pts:15},{label:'Minor unplanned spend',pts:-5},{label:'Significant overspend',pts:-20}]},
+  {id:'character',name:'Character',icon:'✉',color:'#EAF3DE',desc:'Generosity & acts of service',actions:[{label:'Sent a hand-written thank-you card',pts:25},{label:'Act of service — gave wife a 15-min massage',pts:10}]},
+  {id:'spiritual',name:'Spiritual',icon:'✝',color:'#FBEAF0',desc:'Faith & personal integrity',isPrivate:true,actions:[{label:'Prayer / scripture / devotion',pts:15},{label:'Clean day — stayed true',pts:20},{label:'Struggled today',pts:-25}]},
+  {id:'wife',name:"Wife's Award",icon:'💕',color:'#FBEAF0',desc:'Awarded by your wife with her PIN',isWife:true,actions:[]}
 ];
 
-const rewards = [
-  { id:'reading', name:'Reading for pleasure', icon:'📖', desc:'An evening with great literature — Dickens, Twain, your call.', unlockAt:50,  cost:15 },
-  { id:'cigar',   name:'Premium cigar',        icon:'🍂', desc:'Light up a fine smoke. Well earned.',                          unlockAt:100, cost:40 },
-  { id:'dodgers', name:'Dodger game',           icon:'⚾', desc:'Kick back and watch the Boys in Blue.',                        unlockAt:200, cost:75 },
-  { id:'icecream',name:'Ice cream',             icon:'🍦', desc:'The ultimate indulgence. Worth every point.',                  unlockAt:300, cost:120 }
+const REWARDS = [
+  {id:'reading',name:'Reading for pleasure',icon:'📖',desc:'An evening with great literature — Dickens, Twain, your call.',unlockAt:50,cost:15},
+  {id:'cigar',name:'Premium cigar',icon:'🍂',desc:'Light up a fine smoke. Well earned.',unlockAt:100,cost:40},
+  {id:'dodgers',name:'Dodger game',icon:'⚾',desc:'Kick back and watch the Boys in Blue.',unlockAt:200,cost:75},
+  {id:'icecream',name:'Ice cream',icon:'🍦',desc:'The ultimate indulgence. Worth every point.',unlockAt:300,cost:120}
 ];
 
-const ranks = [
-  {label:'Associate',           min:0,    max:250},
-  {label:'Loan Officer I',      min:250,  max:600},
-  {label:'Loan Officer II',     min:600,  max:1100},
-  {label:'Senior Loan Officer', min:1100, max:2000},
-  {label:'Branch Leader',       min:2000, max:3500},
-  {label:'Executive',           min:3500, max:9999}
+const RANKS = [
+  {label:'Associate',min:0,max:250},{label:'Loan Officer I',min:250,max:600},
+  {label:'Loan Officer II',min:600,max:1100},{label:'Senior Loan Officer',min:1100,max:2000},
+  {label:'Branch Leader',min:2000,max:3500},{label:'Executive',min:3500,max:9999}
 ];
 
-let state;
-try { state = JSON.parse(localStorage.getItem('lsc_v1') || 'null') || null; } catch(e) { state = null; }
-if (!state) state = {totalPts:0, allTimePts:0, todayPts:0, todayDate:'', streak:0, lastActiveDate:'', bestStreak:0, log:[], privateLog:[], redeemCounts:{}};
+const PROTECTED = ['spiritual','wife'];
 
-function save() { try { localStorage.setItem('lsc_v1', JSON.stringify(state)); } catch(e) {} }
+// ── State ───────────────────────────────────────────────────────
+let state, habits;
 
-function getPin() { try { return localStorage.getItem('wife_pin') || ''; } catch(e) { return ''; } }
-function setPin(p) { try { localStorage.setItem('wife_pin', p); } catch(e) {} }
+function loadState() {
+  try { state = JSON.parse(localStorage.getItem('lsc_v2')) || null; } catch(e) { state = null; }
+  if (!state) state = {totalPts:0,allTimePts:0,todayPts:0,todayDate:'',streak:0,lastActiveDate:'',bestStreak:0,log:[],privateLog:[],redeemCounts:{}};
+  try { habits = JSON.parse(localStorage.getItem('lsc_habits')) || null; } catch(e) { habits = null; }
+  if (!habits) habits = JSON.parse(JSON.stringify(DEFAULT_HABITS));
+}
+
+function saveState() { try { localStorage.setItem('lsc_v2', JSON.stringify(state)); } catch(e) {} }
+function saveHabits() { try { localStorage.setItem('lsc_habits', JSON.stringify(habits)); } catch(e) {} }
+
+// ── PIN — stored separately, never cleared with state ───────────
+function getPin() { try { return localStorage.getItem('lsc_wife_pin') || ''; } catch(e) { return ''; } }
+function savePin(p) { try { localStorage.setItem('lsc_wife_pin', p); } catch(e) {} }
 
 function todayStr() {
   const d = new Date();
-  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
 
 function resetTodayIfNeeded() {
   const t = todayStr();
   if (state.todayDate !== t) {
     if (state.todayDate && state.lastActiveDate) {
-      const diff = Math.round((new Date(t) - new Date(state.lastActiveDate)) / 86400000);
-      state.streak = diff === 1 ? state.streak + 1 : 0;
+      const diff = Math.round((new Date(t)-new Date(state.lastActiveDate))/86400000);
+      state.streak = diff===1 ? state.streak+1 : 0;
     }
-    state.todayPts = 0;
-    state.todayDate = t;
-    state.log = [];
+    state.todayPts = 0; state.todayDate = t; state.log = [];
   }
 }
 
 function getRank(pts) {
-  for (let i = ranks.length-1; i >= 0; i--) if (pts >= ranks[i].min) return ranks[i];
-  return ranks[0];
+  for (let i=RANKS.length-1;i>=0;i--) if (pts>=RANKS[i].min) return RANKS[i];
+  return RANKS[0];
 }
 
+// ── UI ──────────────────────────────────────────────────────────
 function updateUI() {
   const d = new Date();
   document.getElementById('date-str').textContent = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
   document.getElementById('total-pts').textContent = state.totalPts.toLocaleString();
-  document.getElementById('today-pts').textContent = (state.todayPts >= 0 ? '+' : '') + state.todayPts;
-  const totalRedeemed = Object.values(state.redeemCounts||{}).reduce((a,b)=>a+b,0);
-  document.getElementById('rewards-claimed').textContent = totalRedeemed;
-  const pts = state.allTimePts || 0;
+  document.getElementById('today-pts').textContent = (state.todayPts>=0?'+':'')+state.todayPts;
+  document.getElementById('rewards-claimed').textContent = Object.values(state.redeemCounts||{}).reduce((a,b)=>a+b,0);
+  const pts = state.allTimePts||0;
   const rank = getRank(pts);
-  const nextRank = ranks.find(r => r.min > pts);
+  const next = RANKS.find(r=>r.min>pts);
   document.getElementById('rank-label').textContent = rank.label;
-  if (nextRank) {
-    const pct = Math.min(100, Math.round(((pts - rank.min) / (rank.max - rank.min)) * 100));
-    document.getElementById('rank-next').textContent = (nextRank.min - pts) + ' pts to ' + nextRank.label;
-    document.getElementById('progress-fill').style.width = pct + '%';
+  if (next) {
+    document.getElementById('rank-next').textContent = (next.min-pts)+' pts to '+next.label;
+    document.getElementById('progress-fill').style.width = Math.min(100,Math.round(((pts-rank.min)/(rank.max-rank.min))*100))+'%';
   } else {
     document.getElementById('rank-next').textContent = 'Max rank reached';
     document.getElementById('progress-fill').style.width = '100%';
   }
-  renderLog();
-  renderRewards();
+  renderLog(); renderRewards();
 }
 
 function renderHabits() {
   const grid = document.getElementById('habits-grid');
   grid.innerHTML = '';
   habits.forEach(h => {
-    const count = (state.log||[]).filter(e => e.hid === h.id).length;
+    const count = (state.log||[]).filter(e=>e.hid===h.id).length;
     const div = document.createElement('div');
-    div.className = 'habit-card' + (h.isWife ? ' wife-card' : '');
+    div.className = 'habit-card'+(h.isWife?' wife-card':'');
     div.innerHTML = `
-      ${h.isWife ? '<div class="wife-badge">Wife only</div>' : ''}
+      ${h.isWife?'<div class="wife-badge">Wife only</div>':''}
       <div class="habit-icon" style="background:${h.color}">${h.icon}</div>
       <div class="habit-name">${h.name}</div>
       <div class="habit-desc">${h.desc}</div>
-      ${count > 0 ? `<div class="habit-log-count">${count} award${count>1?'s':''} today</div>` : ''}
+      ${count>0?`<div class="habit-log-count">${count} log${count>1?'s':''} today</div>`:''}
     `;
     div.onclick = () => h.isWife ? openWifeModal() : openModal(h);
     grid.appendChild(div);
@@ -421,109 +404,216 @@ function renderRewards() {
   const grid = document.getElementById('rewards-grid');
   if (!grid) return;
   grid.innerHTML = '';
-  rewards.forEach(r => {
-    const allTime = state.allTimePts || 0;
-    const unlocked = allTime >= r.unlockAt;
+  REWARDS.forEach(r => {
+    const unlocked = (state.allTimePts||0) >= r.unlockAt;
     const canRedeem = unlocked && state.totalPts >= r.cost;
-    const count = (state.redeemCounts||{})[r.id] || 0;
+    const count = (state.redeemCounts||{})[r.id]||0;
     const div = document.createElement('div');
-    div.className = 'reward-card' + (unlocked ? '' : ' locked');
+    div.className = 'reward-card'+(unlocked?'':' locked');
     div.innerHTML = `
       <div class="reward-icon">${r.icon}</div>
       <div class="reward-name">${r.name}</div>
       <div class="reward-desc">${r.desc}</div>
       <div class="reward-meta">
-        <span class="pill ${unlocked ? 'pill-unlock' : 'pill-locked'}">${unlocked ? 'Unlocked' : 'Unlock at ' + r.unlockAt + ' pts'}</span>
+        <span class="pill ${unlocked?'pill-unlock':'pill-locked'}">${unlocked?'Unlocked':'Unlock at '+r.unlockAt+' pts'}</span>
         <span class="pill pill-cost">Costs ${r.cost} pts</span>
       </div>
-      <button class="redeem-btn ${canRedeem ? 'can-redeem' : ''}" ${canRedeem?'':'disabled'} onclick="redeemReward('${r.id}','${r.name.replace(/'/g,"\\'")}',${r.cost})">
-        ${canRedeem ? 'Claim reward' : unlocked ? 'Not enough points' : 'Locked'}
+      <button class="redeem-btn ${canRedeem?'can-redeem':''}" ${canRedeem?'':'disabled'} onclick="redeemReward('${r.id}','${r.name.replace(/'/g,"\\'")}',${r.cost})">
+        ${canRedeem?'Claim reward':unlocked?'Not enough points':'Locked'}
       </button>
-      ${count > 0 ? `<div class="redeemed-count">Claimed ${count}x</div>` : ''}
+      ${count>0?`<div class="redeemed-count">Claimed ${count}x</div>`:''}
     `;
     grid.appendChild(div);
   });
 }
 
-function redeemReward(id, name, cost) {
-  if (state.totalPts < cost) return;
+function redeemReward(id,name,cost) {
+  if (state.totalPts<cost) return;
   state.totalPts -= cost;
-  state.redeemCounts = state.redeemCounts || {};
-  state.redeemCounts[id] = (state.redeemCounts[id]||0) + 1;
-  const timeStr = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  state.log.unshift({hid:'reward', name:'Reward: '+name, pts:-cost, label:'Claimed reward', time:timeStr, isReward:true});
-  save(); updateUI();
-  showToast('Enjoy your ' + name + '!', 'amber');
+  state.redeemCounts = state.redeemCounts||{};
+  state.redeemCounts[id] = (state.redeemCounts[id]||0)+1;
+  const t = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  state.log.unshift({hid:'reward',name:'Reward: '+name,pts:-cost,label:'Claimed reward',time:t,isReward:true});
+  saveState(); updateUI(); showToast('Enjoy your '+name+'!','amber');
 }
 
 function renderLog() {
   const list = document.getElementById('log-list');
   if (!list) return;
-  const entries = state.log || [];
-  if (!entries.length) { list.innerHTML = '<p class="empty-state">No entries yet today.</p>'; return; }
-  list.innerHTML = entries.map(e => `
+  const entries = state.log||[];
+  if (!entries.length) { list.innerHTML='<p class="empty-state">No entries yet today.</p>'; return; }
+  list.innerHTML = entries.map(e=>`
     <div class="log-entry">
-      <div>
-        <div class="log-name">${e.name}</div>
-        <div class="log-detail">${e.label}</div>
-      </div>
+      <div><div class="log-name">${e.name}</div><div class="log-detail">${e.label}</div></div>
       <div class="log-right">
-        <span class="log-pts ${e.isReward ? 'pts-reward' : e.isWife ? 'pts-wife' : e.pts>=0 ? 'pts-pos' : 'pts-neg'}">${e.pts>=0&&!e.isReward?'+':''}${e.pts}</span>
+        <span class="log-pts ${e.isReward?'pts-reward':e.isWife?'pts-wife':e.pts>=0?'pts-pos':'pts-neg'}">${e.pts>=0&&!e.isReward?'+':''}${e.pts}</span>
         <span class="log-time">${e.time}</span>
       </div>
     </div>`).join('');
 }
 
-// Standard modal
+function renderSettingsHabits() {
+  const list = document.getElementById('settings-habit-list');
+  list.innerHTML = '';
+  habits.forEach((h,i) => {
+    if (h.isWife) return;
+    const row = document.createElement('div');
+    row.className = 'habit-row';
+    row.innerHTML = `
+      <div class="habit-row-left">
+        <span class="habit-row-icon">${h.icon}</span>
+        <span class="habit-row-name">${h.name}</span>
+      </div>
+      <div class="habit-row-btns">
+        <button class="icon-btn" onclick="openEditHabit(${i})">Edit</button>
+        ${PROTECTED.includes(h.id)?'':'<button class="icon-btn danger" onclick="deleteHabit(${i})">Delete</button>'}
+      </div>
+    `;
+    list.appendChild(row);
+  });
+  // PIN status
+  const pin = getPin();
+  document.getElementById('pin-status-text').textContent = pin ? 'A PIN is currently set for your wife.' : 'No PIN set yet. Set one so your wife can award points.';
+  document.getElementById('pin-change-btn').textContent = pin ? 'Change PIN' : 'Set up PIN';
+}
+
+// ── Log modal ───────────────────────────────────────────────────
 function openModal(habit) {
-  const isPrivate = habit.id === 'spiritual';
-  document.getElementById('modal-title').textContent = habit.icon + '  ' + habit.name;
+  document.getElementById('modal-title').textContent = habit.icon+'  '+habit.name;
   const actions = document.getElementById('modal-actions');
   actions.innerHTML = habit.actions.map(a => {
-    const hidePoints = isPrivate && a.pts < 0;
-    const ptsClass = a.pts >= 0 ? 'pts-pos' : 'pts-neg';
-    const ptsStr = (a.pts >= 0 ? '+' : '') + a.pts + ' pts';
-    return `<button class="modal-btn" onclick="logEntry('${habit.id}','${habit.name.replace(/'/g,"\\'")}',${a.pts},'${a.label.replace(/'/g,"\\'")}',${isPrivate && a.pts < 0})">
+    const hide = habit.isPrivate && a.pts<0;
+    const cls = a.pts>=0?'pts-pos':'pts-neg';
+    return `<button class="modal-btn" onclick="logEntry('${habit.id}','${habit.name.replace(/'/g,"\\'")}',${a.pts},'${a.label.replace(/'/g,"\\'")}',${!!habit.isPrivate&&a.pts<0})">
       <span>${a.label}</span>
-      ${hidePoints ? '' : `<span class="modal-btn-pts ${ptsClass}">${ptsStr}</span>`}
+      ${hide?'':`<span class="modal-btn-pts ${cls}">${a.pts>=0?'+':''}${a.pts} pts</span>`}
     </button>`;
   }).join('');
-  document.getElementById('modal-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  document.getElementById('modal-overlay').style.display='flex';
+  document.body.style.overflow='hidden';
 }
 
-function closeModal() {
-  document.getElementById('modal-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-}
+function closeModal() { document.getElementById('modal-overlay').style.display='none'; document.body.style.overflow=''; }
 
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModal();
-}
-
-function logEntry(hid, hname, pts, label, isPrivate) {
+function logEntry(hid,hname,pts,label,isPrivate) {
   closeModal();
-  const timeStr = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  const t = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   if (isPrivate) {
-    state.privateLog = state.privateLog || [];
-    state.privateLog.push({hid, label, time:timeStr, date:todayStr()});
+    state.privateLog = state.privateLog||[];
+    state.privateLog.push({hid,label,time:t,date:todayStr()});
   } else {
-    state.log.unshift({hid, name:hname, pts, label, time:timeStr});
-    state.totalPts = Math.max(0, state.totalPts + pts);
-    if (pts > 0) state.allTimePts = (state.allTimePts||0) + pts;
+    state.log.unshift({hid,name:hname,pts,label,time:t});
+    state.totalPts = Math.max(0,state.totalPts+pts);
+    if (pts>0) state.allTimePts=(state.allTimePts||0)+pts;
     state.todayPts += pts;
     state.lastActiveDate = todayStr();
-    state.bestStreak = Math.max(state.streak, state.bestStreak);
-    showToast((pts>=0?'+':'') + pts + ' pts — ' + hname, pts>=0 ? 'green' : 'red');
+    state.bestStreak = Math.max(state.streak,state.bestStreak);
+    showToast((pts>=0?'+':'')+pts+' pts — '+hname, pts>=0?'green':'red');
   }
-  save(); renderHabits(); updateUI();
+  saveState(); renderHabits(); updateUI();
 }
 
-// Wife PIN modal
+// ── Edit habit modal ────────────────────────────────────────────
+let editIndex = -1;
+
+function openEditHabit(i) {
+  editIndex = i;
+  const h = habits[i];
+  document.getElementById('edit-modal-title').textContent = 'Edit: '+h.name;
+  document.getElementById('edit-icon').value = h.icon;
+  document.getElementById('edit-name').value = h.name;
+  document.getElementById('edit-desc').value = h.desc;
+  renderActionRows(h.actions);
+  document.getElementById('edit-modal-overlay').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+
+function openAddHabit() {
+  editIndex = -1;
+  document.getElementById('edit-modal-title').textContent = 'Add New Habit';
+  document.getElementById('edit-icon').value = '⭐';
+  document.getElementById('edit-name').value = '';
+  document.getElementById('edit-desc').value = '';
+  renderActionRows([{label:'',pts:10},{label:'',pts:-10}]);
+  document.getElementById('edit-modal-overlay').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+
+function closeEditModal() { document.getElementById('edit-modal-overlay').style.display='none'; document.body.style.overflow=''; }
+
+function renderActionRows(actions) {
+  const list = document.getElementById('edit-actions-list');
+  list.innerHTML = '';
+  actions.forEach((a,i) => {
+    const row = document.createElement('div');
+    row.className = 'action-row';
+    row.innerHTML = `
+      <input class="action-label-input" placeholder="Action label" value="${a.label.replace(/"/g,'&quot;')}" id="al_${i}" />
+      <input class="action-pts-input" type="number" placeholder="pts" value="${a.pts}" id="ap_${i}" />
+      <button class="remove-action-btn" onclick="removeActionRow(${i})">✕</button>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function addActionRow() {
+  const list = document.getElementById('edit-actions-list');
+  const i = list.children.length;
+  const row = document.createElement('div');
+  row.className = 'action-row';
+  row.innerHTML = `
+    <input class="action-label-input" placeholder="Action label" id="al_${i}" />
+    <input class="action-pts-input" type="number" placeholder="pts" value="10" id="ap_${i}" />
+    <button class="remove-action-btn" onclick="removeActionRow(${i})">✕</button>
+  `;
+  list.appendChild(row);
+}
+
+function removeActionRow(i) {
+  const list = document.getElementById('edit-actions-list');
+  if (list.children.length <= 1) { showToast('Need at least one action','red'); return; }
+  list.removeChild(list.children[i]);
+  // re-index
+  Array.from(list.children).forEach((row,idx) => {
+    row.querySelector('.action-label-input').id = 'al_'+idx;
+    row.querySelector('.action-pts-input').id = 'ap_'+idx;
+    row.querySelector('.remove-action-btn').setAttribute('onclick','removeActionRow('+idx+')');
+  });
+}
+
+function saveHabit() {
+  const icon = document.getElementById('edit-icon').value.trim()||'⭐';
+  const name = document.getElementById('edit-name').value.trim();
+  const desc = document.getElementById('edit-desc').value.trim();
+  if (!name) { showToast('Name is required','red'); return; }
+  const list = document.getElementById('edit-actions-list');
+  const actions = Array.from(list.children).map((_,i) => ({
+    label: document.getElementById('al_'+i).value.trim(),
+    pts: parseInt(document.getElementById('ap_'+i).value)||0
+  })).filter(a=>a.label);
+  if (!actions.length) { showToast('Add at least one action','red'); return; }
+  const colors = ['#EAF3DE','#E1F5EE','#E6F1FB','#FAEEDA','#EEEDFE','#FBEAF0'];
+  if (editIndex >= 0) {
+    habits[editIndex] = {...habits[editIndex], icon, name, desc, actions};
+  } else {
+    const id = 'custom_'+Date.now();
+    const color = colors[habits.length % colors.length];
+    habits.splice(habits.length-2, 0, {id, icon, name, desc, color, actions});
+  }
+  saveHabits(); closeEditModal(); renderHabits(); renderSettingsHabits();
+  showToast(editIndex>=0?'Habit updated':'Habit added','green');
+}
+
+function deleteHabit(i) {
+  if (PROTECTED.includes(habits[i].id)) return;
+  if (!confirm('Delete "'+habits[i].name+'"?')) return;
+  habits.splice(i,1);
+  saveHabits(); renderHabits(); renderSettingsHabits();
+  showToast('Habit deleted','amber');
+}
+
+// ── Wife PIN modal ──────────────────────────────────────────────
 let pinEntry = '';
-let setupEntry = '';
-let setupStep = 0;
-let setupFirst = '';
 
 function openWifeModal() {
   pinEntry = '';
@@ -531,155 +621,120 @@ function openWifeModal() {
   document.getElementById('pin-error').textContent = '';
   document.getElementById('wife-pin-screen').style.display = '';
   document.getElementById('wife-award-screen').style.display = 'none';
-  document.getElementById('wife-setup-screen').style.display = 'none';
   const hasPin = !!getPin();
-  document.getElementById('pin-setup-link').style.display = hasPin ? 'block' : 'none';
-  if (!hasPin) {
-    document.getElementById('wife-modal-sub').textContent = 'No PIN set yet. Tap below to create one.';
-    document.getElementById('pin-setup-link').style.display = 'block';
-    document.getElementById('pin-setup-link').innerHTML = '<span>Tap to set up a PIN</span>';
-  } else {
-    document.getElementById('wife-modal-sub').textContent = 'Hand the phone to your wife. She enters the PIN to award points.';
-  }
-  document.getElementById('wife-modal-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  document.getElementById('wife-modal-sub').textContent = hasPin
+    ? 'Hand the phone to your wife. She enters the PIN to award points.'
+    : 'No PIN set yet. Go to Settings to create one.';
+  document.getElementById('wife-modal-overlay').style.display='flex';
+  document.body.style.overflow='hidden';
 }
 
-function closeWifeModal() {
-  document.getElementById('wife-modal-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-  pinEntry = '';
-  setupEntry = '';
-}
-
-function handleWifeOverlayClick(e) {
-  if (e.target === document.getElementById('wife-modal-overlay')) closeWifeModal();
-}
+function closeWifeModal() { document.getElementById('wife-modal-overlay').style.display='none'; document.body.style.overflow=''; pinEntry=''; }
 
 function updatePinDots() {
-  for (let i = 0; i < 4; i++) {
-    const dot = document.getElementById('dot' + i);
-    if (dot) dot.classList.toggle('filled', i < pinEntry.length);
-  }
+  for (let i=0;i<4;i++) { const d=document.getElementById('dot'+i); if(d) d.classList.toggle('filled',i<pinEntry.length); }
 }
 
 function pinPress(d) {
-  if (pinEntry.length >= 4) return;
-  pinEntry += d;
-  updatePinDots();
-  document.getElementById('pin-error').textContent = '';
-  if (pinEntry.length === 4) {
-    setTimeout(() => {
-      if (pinEntry === getPin()) {
-        document.getElementById('wife-pin-screen').style.display = 'none';
-        document.getElementById('wife-award-screen').style.display = '';
+  if (!getPin()) { showToast('Set a PIN in Settings first','amber'); closeWifeModal(); return; }
+  if (pinEntry.length>=4) return;
+  pinEntry += d; updatePinDots();
+  document.getElementById('pin-error').textContent='';
+  if (pinEntry.length===4) {
+    setTimeout(()=>{
+      if (pinEntry===getPin()) {
+        document.getElementById('wife-pin-screen').style.display='none';
+        document.getElementById('wife-award-screen').style.display='';
       } else {
-        document.getElementById('pin-error').textContent = 'Incorrect PIN. Try again.';
-        pinEntry = '';
-        updatePinDots();
+        document.getElementById('pin-error').textContent='Incorrect PIN. Try again.';
+        pinEntry=''; updatePinDots();
       }
-    }, 120);
+    },120);
   }
 }
 
-function pinDelete() {
-  if (pinEntry.length > 0) { pinEntry = pinEntry.slice(0,-1); updatePinDots(); }
-}
+function pinDelete() { if(pinEntry.length>0){pinEntry=pinEntry.slice(0,-1);updatePinDots();} }
 
-function wifeAward(label, pts) {
+function wifeAward(label,pts) {
   closeWifeModal();
-  const timeStr = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-  state.log.unshift({hid:'wife', name:"Wife's Award", pts, label, time:timeStr, isWife:true});
+  const t = new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  state.log.unshift({hid:'wife',name:"Wife's Award",pts,label,time:t,isWife:true});
   state.totalPts += pts;
-  state.allTimePts = (state.allTimePts||0) + pts;
+  state.allTimePts = (state.allTimePts||0)+pts;
   state.todayPts += pts;
   state.lastActiveDate = todayStr();
-  save(); renderHabits(); updateUI();
-  showToast('+' + pts + ' pts — awarded by your wife!', 'pink');
+  saveState(); renderHabits(); updateUI();
+  showToast('+'+pts+' pts — awarded by your wife!','pink');
 }
 
-// PIN setup
-function showPinSetup() {
-  setupEntry = '';
-  setupStep = 0;
-  setupFirst = '';
-  document.getElementById('setup-sub').textContent = 'Choose a new 4-digit PIN for your wife.';
-  document.getElementById('setup-pin-error').textContent = '';
+// ── PIN setup ───────────────────────────────────────────────────
+let setupEntry='', setupStep=0, setupFirst='';
+
+function openPinSetupFromSettings() {
+  setupEntry=''; setupStep=0; setupFirst='';
+  document.getElementById('pin-setup-title').textContent = getPin()?'Change Wife\'s PIN':'Set Wife\'s PIN';
+  document.getElementById('pin-setup-sub').textContent = 'Choose a 4-digit PIN your wife will use to award points.';
+  document.getElementById('setup-pin-error').textContent='';
   updateSetupDots();
-  document.getElementById('wife-pin-screen').style.display = 'none';
-  document.getElementById('wife-setup-screen').style.display = '';
+  document.getElementById('pin-setup-overlay').style.display='flex';
+  document.body.style.overflow='hidden';
 }
 
-function cancelPinSetup() {
-  document.getElementById('wife-setup-screen').style.display = 'none';
-  document.getElementById('wife-pin-screen').style.display = '';
-}
+function closePinSetup() { document.getElementById('pin-setup-overlay').style.display='none'; document.body.style.overflow=''; setupEntry=''; setupStep=0; }
 
 function updateSetupDots() {
-  for (let i = 0; i < 4; i++) {
-    const dot = document.getElementById('sdot' + i);
-    if (dot) dot.classList.toggle('filled', i < setupEntry.length);
-  }
+  for(let i=0;i<4;i++){const d=document.getElementById('sdot'+i);if(d)d.classList.toggle('filled',i<setupEntry.length);}
 }
 
 function setupPinPress(d) {
-  if (setupEntry.length >= 4) return;
-  setupEntry += d;
-  updateSetupDots();
-  document.getElementById('setup-pin-error').textContent = '';
-  if (setupEntry.length === 4) {
-    setTimeout(() => {
-      if (setupStep === 0) {
-        setupFirst = setupEntry;
-        setupEntry = '';
-        setupStep = 1;
-        document.getElementById('setup-sub').textContent = 'Confirm your PIN.';
+  if (setupEntry.length>=4) return;
+  setupEntry+=d; updateSetupDots();
+  document.getElementById('setup-pin-error').textContent='';
+  if (setupEntry.length===4) {
+    setTimeout(()=>{
+      if (setupStep===0) {
+        setupFirst=setupEntry; setupEntry=''; setupStep=1;
+        document.getElementById('pin-setup-sub').textContent='Confirm your PIN.';
         updateSetupDots();
       } else {
-        if (setupEntry === setupFirst) {
-          setPin(setupEntry);
-          closeWifeModal();
-          showToast('PIN saved! Your wife is ready to award points.', 'green');
+        if (setupEntry===setupFirst) {
+          savePin(setupEntry);
+          closePinSetup();
+          renderSettingsHabits();
+          showToast('PIN saved!','green');
         } else {
-          document.getElementById('setup-pin-error').textContent = "PINs didn't match. Try again.";
-          setupEntry = '';
-          setupStep = 0;
-          setupFirst = '';
-          document.getElementById('setup-sub').textContent = 'Choose a new 4-digit PIN for your wife.';
+          document.getElementById('setup-pin-error').textContent="PINs didn't match. Try again.";
+          setupEntry=''; setupStep=0; setupFirst='';
+          document.getElementById('pin-setup-sub').textContent='Choose a 4-digit PIN your wife will use to award points.';
           updateSetupDots();
         }
       }
-    }, 120);
+    },120);
   }
 }
 
-function setupPinDelete() {
-  if (setupEntry.length > 0) { setupEntry = setupEntry.slice(0,-1); updateSetupDots(); }
+function setupPinDelete() { if(setupEntry.length>0){setupEntry=setupEntry.slice(0,-1);updateSetupDots();} }
+
+// ── Toast ───────────────────────────────────────────────────────
+function showToast(msg,color) {
+  const ex=document.querySelector('.toast'); if(ex) ex.remove();
+  const t=document.createElement('div'); t.className='toast';
+  const c={green:'background:#EAF3DE;color:#3B6D11;',red:'background:#FCEBEB;color:#A32D2D;',amber:'background:#FAEEDA;color:#854F0B;',pink:'background:#FBEAF0;color:#993556;'};
+  t.style.cssText=(c[color]||c.green);
+  t.textContent=msg; document.body.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300);},2500);
 }
 
-function showToast(msg, color) {
-  const existing = document.querySelector('.toast');
-  if (existing) existing.remove();
-  const t = document.createElement('div');
-  t.className = 'toast';
-  const colors = {
-    green:'background:#EAF3DE;color:#3B6D11;',
-    red:'background:#FCEBEB;color:#A32D2D;',
-    amber:'background:#FAEEDA;color:#854F0B;',
-    pink:'background:#FBEAF0;color:#993556;'
-  };
-  t.style.cssText = (colors[color]||colors.green) + 'box-shadow:0 2px 12px rgba(0,0,0,0.15);';
-  t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(() => { t.style.opacity='0'; setTimeout(()=>t.remove(),300); }, 2800);
-}
-
+// ── Tab switching ───────────────────────────────────────────────
 function switchTab(tab) {
-  ['log','rewards','history'].forEach(t => document.getElementById('tab-'+t).style.display = t===tab?'':'none');
-  document.querySelectorAll('.tab').forEach((el,i) => el.classList.toggle('active', ['log','rewards','history'][i]===tab));
+  ['log','rewards','history','settings'].forEach(t=>document.getElementById('tab-'+t).style.display=t===tab?'':'none');
+  document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',['log','rewards','history','settings'][i]===tab));
   if (tab==='rewards') renderRewards();
+  if (tab==='settings') renderSettingsHabits();
 }
 
+// ── Init ────────────────────────────────────────────────────────
+loadState();
 resetTodayIfNeeded();
 renderHabits();
 updateUI();
